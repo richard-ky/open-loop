@@ -5,7 +5,7 @@
 #SBATCH --output=output.txt
 #
 #SBATCH --cpus-per-task=4
-#SBATCH --time=48:00:00
+#SBATCH --time=2-0
 #SBATCH --array=25-50:5
 #SBATCH --mem-per-cpu=1000
 #SBATCH --mail-user=richard.ky@sjsu.edu
