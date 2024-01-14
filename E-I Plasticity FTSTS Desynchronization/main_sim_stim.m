@@ -2,7 +2,7 @@ clear;
 clc;
 
 
-
+function [] = main_sim_stim(T,E,I)
 %Specify Average Synaptic Strength
 J_IEN = (150:50:600)'; %E-to-I set this value 
 nJIE = size(J_IEN,1);
@@ -12,10 +12,10 @@ N_E = 400; % # of E Neurons
 N_I = 100; % # of I Neurons
 
 %Specify Stimulation Parameters
-T_stim = 1; %Pulse width of a single FTSTS pulse 0.5-2 - Interval of 0.5
+T_stim = T; %Pulse width of a single FTSTS pulse 0.5-2 - Interval of 0.5
 x_neutral = 7; %Interpulse interval - Determine frequency
-VstimE = 20; %E Neurons current amplitude %10 - 50 Interval of 5
-VstimI = 20; %I Neurons current amplitude %10 - 50 Interval of 5
+VstimE = E; %E Neurons current amplitude %10 - 50 Interval of 5
+VstimI = I; %I Neurons current amplitude %10 - 50 Interval of 5
 dxlE = 2; %Determine the spread of injected current to E neurons
 dxlI = 0.5*dxlE; %Determine the spread of injected current to I neurons
 
@@ -89,7 +89,8 @@ for trial = 1:nJIE
 
         [REf,timef,W_IEA] = long_sim(Ns,Nsf,duration,Stimoffduration,step,N_E,N_I,T_stim,x_neutral,VstimE,VstimI,dxlE,dxlI,vE0,vI0,S_EI0,S_IE0,S_II0,S_EE0,X_EI0,X_IE0,X_EE0,X_II0,Apost0,Apre0,W_IE0,W_EI0,W_II0,W_EE0,J_EI,J_EE,J_IE,J_II,S_key_EI,S_key_IE,S_key_EE,S_key_II,leftover_S_EI,leftover_S_IE,leftover_S_EE,leftover_S_II,spt_E0);
 
-    save(['/files/Stim_data_analysis_',' JIE ',num2str(J_IE),'AmpE',num2str(VstimE),'AmpI',num2str(VstimI),'PW',num2str(T_stim), '.mat'],'REf','timef','W_IEA','-v7.3')
+    save(['Stim_data_analysis_',' JIE ',num2str(J_IE),'AmpE',num2str(VstimE),'AmpI',num2str(VstimI),'PW',num2str(T_stim), '.mat'],'REf','timef','W_IEA','-v7.3')
 end
 
 minute = toc/60
+end
