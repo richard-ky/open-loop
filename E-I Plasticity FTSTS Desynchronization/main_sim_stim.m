@@ -1,7 +1,3 @@
-clear;
-clc;
-
-
 function [] = main_sim_stim(T,E,I)
 %Specify Average Synaptic Strength
 J_IEN = (150:50:600)'; %E-to-I set this value 
@@ -93,4 +89,3 @@ for trial = 1:nJIE
 end
 
 minute = toc/60
-end
