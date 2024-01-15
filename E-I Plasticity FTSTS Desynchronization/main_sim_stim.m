@@ -87,5 +87,3 @@ for trial = 1:nJIE
 
     save(['Stim_data_analysis_',' JIE ',num2str(J_IE),'AmpE',num2str(VstimE),'AmpI',num2str(VstimI),'PW',num2str(T_stim), '.mat'],'REf','timef','W_IEA','-v7.3')
 end
-
-minute = toc/60
