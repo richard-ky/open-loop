@@ -13,4 +13,4 @@
 
 module load matlab
 
-matlab -nojvm -batch "main_sim_stim(1,15,$SLURM_ARRAY_TASK_ID);quit"
+matlab -nojvm -batch "main_sim_stim(1,15,$SLURM_ARRAY_TASK_ID)"
