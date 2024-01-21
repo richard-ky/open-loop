@@ -1,10 +1,5 @@
 function [Ue, Ui] = pulsatile_input(multi,V_stimE,V_stimI,T_stim,x,duration,step,offduration)
 
-
-
-interval_time = 4*4*(x*T_stim+T_stim+multi*T_stim);
-duration = interval_time*1;
-
 Ue = zeros(1,duration/step);
 Ui = zeros(1,duration/step);
 duration1 = duration-offduration; 
